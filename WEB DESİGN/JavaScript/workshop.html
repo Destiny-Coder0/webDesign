@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+    <div class="container">
+        <div class="p-5 w-50 mx-auto shadow mt-4">
+        <h3>Registration Form</h3>
+
+        <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label lead">Name</label>
+            <input type="text" class="col-sm-9 form-control" id="name">
+        </div>
+
+        <div class="form-group row">
+                <label for="surname" class="col-sm-3 col-form-label lead">Surname</label>
+                <input type="text" class="col-sm-9 form-control" id="surname">
+        </div>
+
+        <div class="form-group row">
+                <label for="deptSelect" class="col-sm-3 col-form-label lead">Department</label>
+                <select id="deptSelect" class="form-control col-sm-9">
+                    <option selected>Choose...</option>
+
+                </select>
+        </div> 
+        <button id="deleteButton" type="text" class="btn btn-outline-danger ml-2 float-right">Delete</button>
+        <button id="saveButton" type="text" class="btn btn-outline-primary float-right">Save</button>
+       
+    </div>
+
+    <div id="listDiv" class="list-group w-50 mx-auto shadow mt-4 p-3">
+        <p class="lead">The List</p>
+    </div>
+
+
+</div>
+    
+
+<script>
+
+    var departments = ["Business","Computing", "Literature", "History","Engineering"];
+    var selectItems = document.getElementById('deptSelect');
+
+    /*for (const index in departments) {
+
+        var option = document.createElement('option');
+        selectItems.appendChild(option);
+        option.text=departments[index];
+       
+    }*/
+
+    departments.forEach(department => {
+        var option = document.createElement('option'); // option elementi oluştur
+        selectItems.appendChild(option); //select elementi
+        option.text= department;
+    })
+
+    var students = new Array();
+
+    function Student(name, surname, department){
+        this.name = name;
+        this.surname = surname;
+        this.department = department;
+    }
+
+    /*var saveButton = document.querySelector('#saveButton');
+   
+    saveButton.onclick = function () {
+        alert('Button Clicked');
+    }*/
+
+    document.querySelector('#saveButton').onclick = function () {
+       
+        var name = document.querySelector('#name').value;
+        var surname = document.getElementById('surname').value;
+        var dept = document.getElementById('deptSelect');
+        var deptText = dept.options[dept.selectedIndex].text; /* You get the options array and then you get the index from that array and after that you get the text of that index If you do not you will just get index. */
+      
+        if(name=="" || surname=="" || deptText=="Choose..."){
+            alert('Complete all the fields!!')
+        }else{
+            var stu = new Student(name, surname, deptText);
+        students.push(stu); 
+        var listItem = document.createElement('a');
+        listItem.className='list-group-item list-group-item-action'; 
+        listItem.innerText = stu.name+" "+stu.surname+" "+stu.department;
+
+        document.getElementById('name').value ="";
+        document.getElementById('surname').value="";
+        document.getElementById('deptSelect').value ="Choose";
+
+        var xButton = document.createElement('span');
+        xButton.className = 'close';
+        xButton.innerHTML = '&times';
+        listItem.appendChild(xButton);
+        xButton.style.cursor ='pointer';
+
+        xButton.onclick = function(){
+            this.parentElement.remove();
+        }
+        listItem.onclick = function () {
+          //listItem.className='bg-primary';
+          //  listItem.classList.add('active')
+           // listItem.classList.add('text-white')
+            listItem.classList.toggle('active')
+            listItem.classList.toggle('text-white')
+        
+            
+        }
+        document.getElementById('listDiv').appendChild(listItem);
+        alert('Student Saved!')
+       }
+        }
+
+        document.querySelector('#deleteButton').onclick = function () {
+           var selectedListItems = document.querySelectorAll('.active')
+          // console.log(selectedListItems)
+           selectedListItems.forEach(li => {
+                li.className = 'd-none'
+            })
+        }
+
+        
+        
+    
+
+    function createStudent(){
+        var name = document.querySelector('#name').value;
+        var surname = document.getElementById('surname').value;
+        var dept = document.getElementById('deptSelect');
+        var stu = new Student(name, surname, dept.options[dept.selectedIndex].text);
+        students.push(stu); 
+        var listItem = document.createElement('a');
+        listItem.className='list-group-item list-group-item-action'; 
+        listItem.innerText = stu.name+" "+stu.surname+" "+stu.department;
+        document.getElementById('listDiv').appendChild(listItem);
+    }
+
+  
+
+
+</script>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

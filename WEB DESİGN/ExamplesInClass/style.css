@@ -1,0 +1,17 @@
+
+div {
+    width: 600px;
+    height: 100px;
+}
+
+#heading1 {
+    color: blue;
+}
+
+.para1{
+    color:red;
+}
+
+.para2{
+    color:green;
+}

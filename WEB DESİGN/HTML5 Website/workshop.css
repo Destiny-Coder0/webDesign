@@ -1,0 +1,39 @@
+body{
+    background-color: lavender;
+}
+
+#container {
+    width: 800px;
+    height: 600px;
+    background-color:white;
+    overflow:auto;
+    margin: 0 auto;
+}
+
+#main {
+    width: 500px;
+    height: 400px;
+    background-color:gainsboro;
+    margin-top:50px;
+    margin-left:50px;
+}
+
+#div01 {
+    width: 150px;
+    height: 150px;
+    background-color:red;
+}
+
+
+#div02 {
+    width: 150px;
+    height: 150px;
+    background-color:blue;
+    display:none;
+}
+
+#div03 {
+    width: 150px;
+    height: 150px;
+    background-color:yellow;
+}

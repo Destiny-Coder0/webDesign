@@ -1,0 +1,116 @@
+body{
+    background-color: lavender;
+    font-family: calibri;
+}
+.container{
+    width: 700px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    width: 100%;
+    height: 180px;
+    background-color: black;
+    position: relative;
+}
+
+#title{
+    color: white;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+}
+
+#five{
+    color: orange;
+    font-size: 65px;
+    position: absolute;
+    top: -35px;
+    left: 110px;
+}
+
+.navbar{
+    position: relative;
+    height: 40px;
+    background-color: cornflowerblue;
+    width: 100%;
+    bottom: -140px;
+}
+
+#menu{
+    list-style-type:none;
+}
+
+#menu li{
+    float: left;
+    position: relative;
+    left: -40px;
+}
+
+#menu li a{
+    text-decoration: none;
+    display: block;
+    width: 85px;
+    height: 40px;
+    text-align:center;
+    line-height: 40px;
+    color: blue;
+}
+
+#menu li:hover > a{
+    background-color: aliceblue;
+    color: darkblue;
+}
+
+.content{
+    width: 100%;
+    height:450px;
+    margin-top:10px;
+}
+
+.left{
+    float: left;
+    width:500px;
+    background-color:white;
+    padding: 20px;
+    box-sizing: border-box;
+    height:450px;
+}
+
+.image{
+    width:80px;
+    float:left;
+    margin-right:10px;
+}
+
+hr{
+    width: 80%;
+    margin-left: 0px;
+}
+
+.right{
+    float:left;
+    width:190px;
+    background-color: gray;
+    margin-left:10px;
+    padding:20px;
+    box-sizing:border-box;
+    height:450px;
+}
+
+.footer{
+    width:100%;
+    height:100px;
+    background-color: black;
+    padding:20px;
+    box-sizing:border-box;
+    margin-top:10px;
+}
+
+.footer p{
+    color:white;
+    text-align:center;
+}

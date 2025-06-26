@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Mind Mirror - Know Yourself Better</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container p-2">
+
+        <div class="jumbotron bg-warning d-flex align-items-center p-3 mx-auto shadow">
+            <img class="float-left img-fluid img-thumbnail rounded-circle" style="width:100px; height:100px;"
+                src="https://png.pngtree.com/png-clipart/20240209/ourlarge/pngtree-question-icon-asset-png-image_11610824.png"
+                alt="">
+            <h1 class="display-3 float-left ml-4 text-dark">MIND MIRROR</h1>
+            <div class="float-right p-2 ml-auto">
+                <button class="btn btn-secondary btn-dark" onclick="">🌓 Dark Mode</button>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand navbar-dark bg-info rounded my-3 shadow">
+            <div class="nav navbar-nav">
+                <a class="nav-item nav-link active text-warning" href="#">Home</a>
+                <a class="nav-item nav-link" href="#">Contact</a>
+                <a class="nav-item nav-link" href="#">About</a>
+                <a class="nav-item nav-link" href="#">Content</a>
+            </div>
+        </nav>
+
+        <div class="content p-4 shadow p-4 my-2 bg-light">
+            <img class="img-thumbnail float-left mr-4" style="width:150px; height:150px;"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL0bL1czl3oiijYNX20RENcbu9OrH4qOtJYw5xQhQUCjjUs4ywlAXw2pLFhgxTX9Fii3U&usqp=CAU"
+                alt="">
+            <h4 class="text-success display-4">The Great Test Marathon Has Started!</h4>
+            <p class="text-justify lead p-2">Everyone is here! Join the biggest event of the MindMirror testing
+                community.<br>
+                Solve the most popular tests for a week, take your place in the rankings and don't miss the surprise
+                prizes!<br>
+                Share on social media with the <strong>#TestMarathon2025</strong> tag and make your name known!</p>
+        </div>
+
+        <div class="content shadow p-4 my-2 bg-warning">
+            <div class="row">
+                <div class="col-9">
+                    <div class="p-5 shadow mt-2 bg-white rounded">
+                        <h1 class="lead text-light text-left mb-4 bg-secondary p-3">Survey Form</h1>
+                        <div class="w-75 mx-auto">
+
+                            <div class="form-group row">
+                                <label for="job" class="col-sm-2 col-form-label">Job</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="job" placeholder="Job">
+                                </div>
+                                <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="gender" placeholder="Gender">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="education" class="col-sm-2 col-form-label">Education</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="education" placeholder="Education">
+                                </div>
+                                <label for="select" class="col-sm-2 col-form-label">Age</label>
+                                <div class="col-sm-4">
+                                    <select id="select" class="form-control">
+                                        <option selected hidden>Choose...</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-end mt-4">
+                                <button id="btnGet" class="btn btn-outline-primary mr-2">Show Answers</button>
+                                <button id="save" type="button" class="btn btn-outline-success">Save</button>
+                            </div>
+
+                            <h5 class="mt-4">Your Answers:</h5>
+                            <ul id="list" class="list-group mt-2"></ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 mt-2">
+                    <h3 class="display-5 bg-secondary text-light p-3 rounded">Categories</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item rounded"><a href="">Personality Tests</a></li>
+                        <li class="list-group-item"><a href="">General Knowledge Tests</a></li>
+                        <li class="list-group-item"><a href="">Fun Tests</a></li>
+                        <li class="list-group-item"><a href="">Character Tests</a></li>
+                        <li class="list-group-item"><a href="">Movies & Series Tests</a></li>
+                    </ul>
+
+                    <div class="mt-2">
+                        <h3 class="bg-secondary text-light p-3 rounded">Popular Tests</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="">What Type of Thinker Are You?</a></li>
+                            <li class="list-group-item"><a href="">What's 2 + 2?</a></li>
+                            <li class="list-group-item"><a href="">Which writer is that?</a></li>
+                            <li class="list-group-item"><a href="">What is your weak point?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-2">
+                        <h3 class="bg-secondary text-light p-3 rounded">🏆Leader Board</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="">1st - Adrian September</a></li>
+                            <li class="list-group-item"><a href="">2st - Lily October</a></li>
+                            <li class="list-group-item"><a href="">3st - Martin November</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h3 class="my-4 bg-secondary text-light p-3 shadow">📆 Today's quick quiz: </h3>
+
+        <div class="container mb-4 shadow p-4">
+            <div class="row">
+                <div class="col-8 mt-2">
+                    <div class="quiz-header">
+                        <div class="bg-warning mb-2 p-3 text-dark">
+                            <h3 id="question" class="mb-2">Question is loading...</h3>
+                        </div>
+
+                        <div class="border border-dark mb-2 p-3">
+
+                            <ul class="list-group list-group-flush w-50">
+                                <li class="list-group-item border-0">
+                                    <input type="radio" name="answer" id="a" class="answer">
+                                    <label for="a" id="textA" class="lead">Option A</label>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <input type="radio" name="answer" id="b" class="answer">
+                                    <label for="b" id="textB" class="lead">Option B</label>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <input type="radio" name="answer" id="c" class="answer">
+                                    <label for="c" id="textC" class="lead">Option C</label>
+                                </li>
+                                <li class="list-group-item border-0">
+                                    <input type="radio" name="answer" id="d" class="answer">
+                                    <label for="d" id="textD" class="lead">Option D</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" id="submit" class="btn btn-secondary rounded-0 w-100">Submit</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4 mt-2 p-3 bg-warning">
+                    <h3 class="bg-secondary p-2 rounded text-light">Your Answers</h3>
+                    <ul class="list-group list-group-flush">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="" class="text-secondary">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D12AQGTJNns3t_4WA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1609614024328?e=2147483647&v=beta&t=zR7upf-rM5fZQ5Gs5c51VVPp0DWmWZ6LtMBxBcwzTyY"
+                            style="width:900px; height:720px;" class="d-block w-100" alt="...">
+                    </a>
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="bg-white text-secondary p-3">What Type of Thinker Are You?</h5>
+                        <p class="bg-white text-secondary p-3 lead">Analytical or intuitive?</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="" class="text-secondary">
+                        <img src="https://facts.net/wp-content/uploads/2020/02/anatomical-2261006_1280.jpg"
+                            style="width:900px; height:720px;" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="bg-white text-secondary p-3">How much do you know about body?</h5>
+                        <p class="bg-white text-secondary p-3 lead">Your body is doing thousands of things right now but
+                            how many of them do you actually understand? Let's find out!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="" class="text-secondary">
+                        <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?cs=srgb&dl=pexels-pixabay-356056.jpg&fm=jpg"
+                            style="width:900px; height:720px;" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="bg-white text-secondary p-3">Could You Survive a Day Without Technology?</h5>
+                        <p class="bg-white text-secondary p-3 lead">Imagine waking up to no internet, no notifications,
+                            no screens... Could you really make it through the day?</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <div class="footer text-center mt-3 bg-secondary rounded shadow p-3 border border-dark">
+            <div class="fcontent shadow p-4 my-2 bg-dark">
+                <div class="row">
+                    <div class="col-4">
+                        <h5 class="text-info display-5">About Us</h5>
+                        <p class="lead mt-2 text-light">
+                            MindMirror is a platform that aims to help users get to know themselves and learn new things
+                            through fun and informative tests.
+                        </p>
+
+                    </div>
+                    <div class="col-4 text-center">
+                        <h5 class="text-info">Follow Us</h5>
+                        <div class="mt-3">
+                            <a href="#"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/CIS-A2K_Instagram_Icon_%28Black%29.svg/2048px-CIS-A2K_Instagram_Icon_%28Black%29.svg.png"
+                                    style="width:50px; height:50px;" class="rounded-circle"></a>
+                            <a href="#"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/2048px-Facebook_icon_%28black%29.svg.png"
+                                    style="width:50px; height:50px;" class="rounded-circle"></a>
+                            <a href="#"><img
+                                    src="https://pngdownload.io/wp-content/uploads/2023/12/X-Logo-Twitter-Logo-Iconic-Social-Media-Brand-Symbol-PNG-Transparent-Recognizable-Emblem-jpg.webp"
+                                    style="width:50px; height:50px;" class="rounded-circle"></a>
+                            <a href="#"><img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS78foLgrRo3pRf2u6bxteOZSlZZ5TYM5c0-Q&s"
+                                    style="width:50px; height:50px;" class="rounded-circle"></a>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-1 p-3">
+                        <h6 class="text-secondary mt-5">&copy; 2025 MindMirror | All rights reserved </h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var ages = ['18-24', '25-34', '35-44', '45-54', '55 and over'];
+        for (let index = 0; index < ages.length; index++) {
+            var option = document.createElement('option');
+            var select = document.querySelector('#select');
+            option.innerHTML = ages[index];
+            select.appendChild(option);
+        }
+
+        function Survey(job, gender, education, age) {
+            this.job = job;
+            this.gender = gender;
+            this.education = education;
+            this.age = age;
+        }
+
+        var survey_list = [];
+
+        document.querySelector('#save').onclick = function () {
+            var job = document.getElementById('job').value;
+            var gender = document.getElementById('gender').value;
+            var education = document.getElementById('education').value;
+            var select = document.querySelector('#select');
+            var age = select.options[select.selectedIndex].text;
+
+            if (job == "" || gender == "" || education == "" || age == "Choose...") {
+                alert("Complete All Fields");
+            } else {
+                var survey = new Survey(job, gender, education, age);
+                survey_list.push(survey);
+
+                document.getElementById('job').value = "";
+                document.getElementById('gender').value = "";
+                document.getElementById('education').value = "";
+                document.getElementById('select').selectedIndex = 0;
+            }
+        };
+
+        document.getElementById('btnGet').onclick = function () {
+            var ul = document.getElementById('list');
+            ul.innerHTML = "";
+
+            survey_list.forEach(survey => {
+                var li = document.createElement('li');
+                li.className = "list-group-item";
+                li.innerHTML = `Job: ${survey.job} | Gender: ${survey.gender} | Education: ${survey.education} | Age: ${survey.age}`;
+                ul.appendChild(li);
+            });
+        };
+
+        const quizData = [
+            {
+                question: "What is 55 * 70?",
+                a: "3850",
+                b: "3870",
+                c: "3750",
+                d: "3950",
+                correct: "a"
+            },
+            {
+                question: "What is 25 squared?",
+                a: "665",
+                b: "675",
+                c: "625",
+                d: "669",
+                correct: "c"
+            },
+            {
+                question: "What is 704 - 45?",
+                a: "659",
+                b: "649",
+                c: "669",
+                d: "680",
+                correct: "a"
+            }
+        ];
+
+        const questionEl = document.getElementById("question");
+        const answerEls = document.querySelectorAll(".answer");
+        const textA = document.getElementById("textA");
+        const textB = document.getElementById("textB");
+        const textC = document.getElementById("textC");
+        const textD = document.getElementById("textD");
+        const submitBtn = document.getElementById("submit");
+        const answerListEl = document.querySelector(".col-4 ul");
+
+        let currentQuiz = 0;
+        let score = 0;
+
+        function loadQuiz() {
+            deselectAnswers();
+            const currentData = quizData[currentQuiz];
+            questionEl.innerText = currentData.question;
+            textA.innerText = currentData.a;
+            textB.innerText = currentData.b;
+            textC.innerText = currentData.c;
+            textD.innerText = currentData.d;
+        }
+
+        function getSelected() {
+            let selectedAnswer = undefined;
+            answerEls.forEach(answerEl => {
+                if (answerEl.checked) selectedAnswer = answerEl.id;
+            });
+            return selectedAnswer;
+        }
+
+        function deselectAnswers() {
+            answerEls.forEach(answerEl => answerEl.checked = false);
+        }
+
+        function addAnswerToList(selectedId) {
+            const question = quizData[currentQuiz].question;
+
+            const li = document.createElement("li");
+            li.className = "list-group-item";
+            li.textContent = `${question} → Your Answer: ${selectedId.toUpperCase()}`;
+            answerListEl.appendChild(li);
+        }
+
+
+        submitBtn.addEventListener("click", () => {
+            const selectedAnswer = getSelected();
+            if (!selectedAnswer) {
+                alert("Please select an answer!");
+                return;
+            }
+
+            const correctAnswer = quizData[currentQuiz].correct;
+            if (selectedAnswer === correctAnswer) {
+                score++;
+            }
+
+            addAnswerToList(selectedAnswer);
+            currentQuiz++;
+
+            if (currentQuiz < quizData.length) {
+                loadQuiz();
+            }
+            else {
+                document.querySelector(".quiz-header").innerHTML = `
+        <div class="bg-success text-white p-4 text-center">
+            <h3>Quiz Completed!</h3>
+            <p>Your final score is <strong>${score}</strong> out of ${quizData.length}</p>
+        </div>
+    `;
+                const scoreElement = document.createElement("li");
+                scoreElement.className = "list-group-item bg-dark text-white text-center mt-3";
+                scoreElement.innerHTML = `<strong>Score: ${score} / ${quizData.length}</strong>`;
+                answerListEl.appendChild(scoreElement);
+
+                const restartBtn = document.createElement("button");
+                restartBtn.textContent = "Restart";
+                restartBtn.className = "btn btn-secondary mt-2 w-100";
+                restartBtn.onclick = () => location.reload();
+                document.querySelector(".col-4").appendChild(restartBtn);
+            }
+
+        });
+
+        loadQuiz();
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

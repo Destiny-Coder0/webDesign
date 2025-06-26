@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div id="quiz" class="container mt-3 p-3 border border-primary w-50">
+        <div class="quiz-header">
+            <div class="bg-primary mb-2 p-3 text-white">
+                <h3 id="question" class="mb-2">Question is loading...</h3>
+            </div>
+
+            <div class="border border-primary mb-2 p-3">
+
+                <ul class="list-group list-group-flush w-50">
+                    <li class="list-group-item border-0">
+                        <input type="radio" name="answer" id="a" class="answer">
+                        <label for="a" id="textA" class="lead">Option A</label>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <input type="radio" name="answer" id="b" class="answer">
+                        <label for="b" id="textB" class="lead">Option B</label>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <input type="radio" name="answer" id="c" class="answer">
+                        <label for="c" id="textC" class="lead">Option C</label>
+                    </li>
+                    <li class="list-group-item border-0">
+                        <input type="radio" name="answer" id="d" class="answer">
+                        <label for="d" id="textD" class="lead">Option D</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                    <button type="button" id="submit" class="btn btn-primary rounded-0 w-100">Submit</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        const quizDataQuestions = [
+            {
+                question: "Which language runs in a browser?",
+                a: "Java",
+                b: "C", 
+                c: "Python",
+                d: "JavaScript",
+                correct: "d"
+            },
+            {
+                question: "What does CSS stand for?",
+                a: "Central Style Sheet",
+                b: "Cascading Style Sheet", 
+                c: "Cascading Simple Sheet",
+                d: "Cars Suvs Sailboats",
+                correct: "b"
+            },
+            {
+                question: "Which one is not a backend language?",
+                a: "Java",
+                b: "C#", 
+                c: "Python",
+                d: "JavaScript",
+                correct: "d"
+            }
+        ]
+
+        const quiz = document.getElementById("quiz");
+        const answerOptions = document.querySelectorAll(".answer");
+        const questionText = document.getElementById("question");
+        const a_text = document.getElementById("textA");
+        const b_text = document.getElementById("textB");
+        const c_text = document.getElementById("textC");
+        const d_text = document.getElementById("textD");
+        const submitButton = document.getElementById("submit");
+        let currentQuiz = 0;
+        let score = 0;
+
+        const getSelected = () => {
+            let answer;
+            answerOptions.forEach((answerOption) => {
+                if(answerOption.checked) answer = answerOption.id;
+            });
+            return answer;
+        };
+
+        const deselectOptions = () => {
+            answerOptions.forEach(opt => {
+                opt.checked = false;
+            });
+        }
+
+        const startQuiz = () => {
+            deselectOptions();
+            const currentQuizData = quizDataQuestions[currentQuiz];
+            questionText.innerText = currentQuizData.question;
+            a_text.innerText = currentQuizData.a; 
+            b_text.innerText = currentQuizData.b; 
+            c_text.innerText = currentQuizData.c; 
+            d_text.innerText = currentQuizData.d; 
+        };
+
+        startQuiz();
+
+        submitButton.addEventListener("click", () => {
+            const userAnswer = getSelected();
+            if (userAnswer){
+                if(userAnswer == quizDataQuestions[currentQuiz].correct) {
+                    score++;
+                } currentQuiz++;
+                    if(currentQuiz<quizDataQuestions.length){
+                        startQuiz();
+                    }
+                    else{
+                        quiz.innerHTML = '<div class="bg-primary text-white p-3"> <h2 class="text-center">Your score is '+score+ '</h2></div> <div class="text-center"> <button class="btn btn-outline-primary w-100 rounded-0 mt-2" onclick="history.go(0)"> Play Again </button></div>';
+                    }
+                }
+                else {
+                alert("Select an answer!");
+                }
+        });
+
+    </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

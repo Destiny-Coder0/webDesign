@@ -1,0 +1,22 @@
+body{
+    background-color: lavender;
+    font-family: calibri;
+}
+
+.container{
+    width:700px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: black;
+    width: 100%;
+    height: 180px;
+}
+
+#title{
+    color:white;
+    position:absolute;
+    margin-top:40px;
+}

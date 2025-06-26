@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library Book Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .header {
+      background-color: #6f42c1;
+      color: white;
+      padding: 10px;
+    }
+    .book-item {
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .book-item:hover {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <div class="container border p-3">
+    <div class="header mb-3">
+      <h4 class="m-0">Library Book Registration</h4>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" id="title">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Date</label>
+        <input type="number" class="form-control" id="date" placeholder="Year of Publishing">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Author</label>
+        <input type="text" class="form-control" id="author">
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Category</label>
+        <select class="form-select" id="category">
+          <option value="">Choose...</option>
+          <option value="Novel">Novel</option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+        </select>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <span id="bookCount">Number of books: 0</span>
+      <button class="btn btn-outline-primary" onclick="saveBook()">Save</button>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6 border p-3">
+        <h5>The Book List</h5>
+        <button class="btn btn-sm btn-secondary mb-2" onclick="renderBookList()">Get List</button>
+        <div id="bookList"></div>
+      </div>
+      <div class="col-md-6 border p-3">
+        <h5>Details...</h5>
+        <div id="bookDetails"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let books = [];
+
+    function saveBook() {
+      const title = document.getElementById('title').value;
+      const date = document.getElementById('date').value;
+      const author = document.getElementById('author').value;
+      const category = document.getElementById('category').value;
+
+      if (title && date && author && category) {
+        books.push({ title, date, author, category });
+        document.getElementById('bookCount').textContent = `Number of books: ${books.length}`;
+        document.getElementById('title').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('author').value = '';
+        document.getElementById('category').value = '';
+        renderBookList();
+      } else {
+        alert('Please fill all fields!');
+      }
+    }
+
+    function renderBookList() {
+      const bookList = document.getElementById('bookList');
+      bookList.innerHTML = '';
+
+      books.forEach((book, index) => {
+        const div = document.createElement('div');
+        div.className = 'book-item d-flex justify-content-between align-items-center border px-2';
+        div.innerHTML = `<span onclick="showDetails(${index})">${book.title}</span>
+                         <button class="btn btn-sm btn-danger" onclick="deleteBook(${index})">x</button>`;
+        bookList.appendChild(div);
+      });
+    }
+
+    function showDetails(index) {
+      const book = books[index];
+      document.getElementById('bookDetails').innerHTML = `
+        <p><strong>Title:</strong> ${book.title}</p>
+        <p><strong>Author:</strong> ${book.author}</p>
+        <p><strong>Date:</strong> ${book.date}</p>
+        <p><strong>Category:</strong> ${book.category}</p>
+      `;
+    }
+
+    function deleteBook(index) {
+      books.splice(index, 1);
+      document.getElementById('bookCount').textContent = `Number of books: ${books.length}`;
+      renderBookList();
+      document.getElementById('bookDetails').innerHTML = '';
+    }
+  </script>
+
+</body>
+</html>
